@@ -1,10 +1,10 @@
 #Coded by GonzalesPy...
+#test
+import statics
 
-import Statics
 
 
-
-print("Hello, " + Statics.username)
+print("Hello, " + statics.username)
 
 
 
@@ -12,9 +12,9 @@ def start():
     print("Add new contact 'nc'")
     print("See all contacts 'ac'")
     print("Search for a contact 'sc")
-    Statics.handler = input()
+    statics.handler = input()
 
-    if Statics.handler == "nc":
+    if statics.handler == "nc":
         name = input("Full name: ")
         number = input("Telephone number: ")
 
@@ -24,13 +24,13 @@ def start():
         nCObj.write("\n")
         nCObj.close()
 
-    if Statics.handler == "ac":
+    if statics.handler == "ac":
         aCObj = open("contacts.txt")
         for line in aCObj:
             print (line.rstrip())
         aCObj.close()
 
-    if Statics.handler == "sc":
+    if statics.handler == "sc":
         searchContact = input("For which contact do you wanna search \n")
         sCObj = open("contacts.txt", "r")
         for row in sCObj:
@@ -42,12 +42,12 @@ def start():
 
 start()  #start sc/nc
 
-while Statics.run:  #runs the main
+while statics.run:  #runs the main
 
 
-    if Statics.handler == "exit":
-        Statics.run = False
-        print("Bye " + Statics.username + " see you next time! ;)" )
+    if statics.handler == "exit":
+        statics.run = False
+        print("Bye " + statics.username + " see you next time! ;)" )
     else:
        start()
 
