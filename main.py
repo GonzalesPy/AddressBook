@@ -1,8 +1,7 @@
 #Coded by GonzalesPy...
 #test
 import statics
-import username
-
+from user import username
 
 print("Hello, " + statics.username)
 
