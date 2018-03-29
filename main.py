@@ -1,10 +1,13 @@
 #Coded by GonzalesPy...
 #test
 import statics
-
+import username
 
 
 print("Hello, " + statics.username)
+
+
+username.username()
 
 
 
