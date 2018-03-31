@@ -1,8 +1,8 @@
 #Coded by GonzalesPy...
 #test
 from time import sleep
-import threading
 from threading import Thread
+import googlesearch
 
 import statics
 from user import userdates
@@ -46,20 +46,23 @@ def start():
             if searchContact in row:
                 print ("\n--------------------------- \n" + row + "--------------------------- \n")
         sCObj.close()
+
     if statics.handler == "chat":
-       t1 = Thread(target=chat.server)
-       t2 =Thread(target=chat.client)
-       t1.start()
-       t2.start()
-       while t1.is_alive:
+
+        t1 = Thread(target=chat.server)
+        t2 =Thread(target=chat.client)
+        t1.start()
+        t2.start()
+
+        while t1.is_alive:
             sleep(1)
             if statics.message == "exitchat":
-                t2.stop
-                t1.stop()
+                  t2.stop
+                  t1.stop()
 
 
 
-        #if statics.message == "exitchat":
+
 
 
 

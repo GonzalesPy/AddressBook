@@ -1,17 +1,15 @@
-import string
 from random import randint
 
 zero = 0
 password = ""
-min_char = 8
-max_char = 12
+min_char = int (input("Minimum password lengh: "))
+max_char = int (input("Maximum password lengh: "))
 allchar =  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!""#$%&'()*+,-./:;<=>?@[\]^_`{|}~0123456789"
 
 passwordLengh = randint(min_char, max_char)
-print(passwordLengh)
 
 for zero in range(passwordLengh):
-    char_pickInt = randint(0, 93)
+    char_pickInt = randint(0, 92)
     password = password + allchar[char_pickInt]
     min_char = min_char + 1
 

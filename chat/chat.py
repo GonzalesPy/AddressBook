@@ -1,30 +1,30 @@
 import socket
-import threading
 from threading import Thread
+from time import sleep
 
 import statics
-import main
+
 
 
 def server():
+    print(statics.chatPort + statics.myIp)
+
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.bind(('192.168.177.106', 2445))
+    server_socket.bind(('192.168.177.106', 4455))
     server_socket.listen(1)
     (client_socket, adr) = server_socket.accept()
 
     while True:
-        msg = client_socket.recv(1024)
+        msg = client_socket.recv(4455)
         print("Receive>" + str(msg, "utf8" + "\n"))
 
 def client():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_addr = ('192.168.177.106', 2445)
+    server_addr = ('192.168.177.102', 4455)
     client_socket.connect(server_addr)
-    while statics.runServer:
-        statics.message = input("Send>\n")
-        if statics.message == "exitchat":
-          t2.stop
-          t1.stop()
-        client_socket.send(bytes(statics.message, "utf8"))
+    while True:
+        message = input("Send>\n")
+        client_socket.send(bytes(message, "utf8"))
+
 
 

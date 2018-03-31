@@ -10,6 +10,6 @@ myphone = ""
 #chat
 
 message = " " #message to other client
-myIp = ""
-chatterIp = ""
-chatPort = ""
+myIp = ''
+chatterIp = ''
+chatPort = ''
